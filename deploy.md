@@ -6,6 +6,37 @@
 - npm 7.0.0 或更高版本（通常随Node.js一起安装）
 - 现代浏览器（支持ES6+特性）
 
+## 依赖版本和安全性
+
+### 版本要求
+- Vite: 6.2.2 或更高版本
+- @vitejs/plugin-vue: 5.2.3 或更高版本
+
+### 依赖安全检查
+1. 运行安全审计：
+   ```bash
+   npm audit
+   ```
+
+2. 修复安全漏洞：
+   ```bash
+   npm audit fix
+   ```
+   对于需要进行破坏性更改的修复：
+   ```bash
+   npm audit fix --force
+   ```
+   注意：使用--force可能导致破坏性更改，请在更新后全面测试应用功能。
+
+3. 定期更新依赖：
+   ```bash
+   npm update
+   ```
+   更新到最新主版本（可能包含破坏性更改）：
+   ```bash
+   npm update --force
+   ```
+
 ## 本地开发环境搭建
 
 1. 安装Node.js
@@ -91,6 +122,8 @@ server {
 
 - [ ] Node.js和npm版本符合要求
 - [ ] 所有依赖已正确安装
+- [ ] 依赖安全审计已完成（npm audit）
+- [ ] 关键依赖版本符合要求（Vite, @vitejs/plugin-vue等）
 - [ ] 生产环境构建成功
 - [ ] 环境变量配置正确
 - [ ] Web服务器配置正确
