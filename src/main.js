@@ -18,6 +18,10 @@ const router = createRouter({
     {
       path: '/news',
       component: () => import('./views/News.vue')
+    },
+    {
+      path: '/order',
+      component: () => import('./views/Order.vue')
     }
   ]
 })
