@@ -31,9 +31,9 @@
             <h3 class="text-xl font-semibold text-gray-900">云计算咨询</h3>
             <p class="mt-4 text-gray-600">提供专业的云计算规划和架构设计咨询服务</p>
             <div class="mt-6">
-              <a :href="getAlipayUrl('云计算咨询')" target="_blank" class="btn-primary block text-center">
+              <button @click="handleBuyService('云计算咨询')" class="btn-primary block text-center w-full">
                 立即购买 ¥99
-              </a>
+              </button>
             </div>
           </div>
 
@@ -47,9 +47,9 @@
             <h3 class="text-xl font-semibold text-gray-900">云计算迁移</h3>
             <p class="mt-4 text-gray-600">专业的云迁移服务，确保业务平稳过渡</p>
             <div class="mt-6">
-              <a :href="getAlipayUrl('云计算迁移')" target="_blank" class="btn-primary block text-center">
+              <button @click="handleBuyService('云计算迁移')" class="btn-primary block text-center w-full">
                 立即购买 ¥99
-              </a>
+              </button>
             </div>
           </div>
 
@@ -64,9 +64,9 @@
             <h3 class="text-xl font-semibold text-gray-900">云计算运维</h3>
             <p class="mt-4 text-gray-600">专业的云环境运维和优化服务</p>
             <div class="mt-6">
-              <a :href="getAlipayUrl('云计算运维')" target="_blank" class="btn-primary block text-center">
+              <button @click="handleBuyService('云计算运维')" class="btn-primary block text-center w-full">
                 立即购买 ¥99
-              </a>
+              </button>
             </div>
           </div>
 
@@ -80,9 +80,9 @@
             <h3 class="text-xl font-semibold text-gray-900">云安全合规</h3>
             <p class="mt-4 text-gray-600">确保云环境的安全性和合规性</p>
             <div class="mt-6">
-              <a :href="getAlipayUrl('云安全合规')" target="_blank" class="btn-primary block text-center">
+              <button @click="handleBuyService('云安全合规')" class="btn-primary block text-center w-full">
                 立即购买 ¥99
-              </a>
+              </button>
             </div>
           </div>
         </div>
@@ -125,9 +125,17 @@
 </template>
 
 <script setup>
-const getAlipayUrl = (serviceName) => {
-  // 这里替换为实际的支付宝支付链接
-  const baseUrl = 'https://qr.alipay.com/fkx11427ygjxcpmn9l9e506';
-  return `${baseUrl}?subject=${encodeURIComponent(serviceName)}&total_amount=99`;
+import { useRouter } from 'vue-router';
+
+const router = useRouter();
+
+const handleBuyService = (serviceName) => {
+  router.push({
+    path: '/order',
+    query: {
+      service: serviceName,
+      price: 99
+    }
+  });
 };
 </script>
