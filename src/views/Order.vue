@@ -31,11 +31,12 @@
         <h3 class="text-lg font-medium text-gray-900 mb-4">支付方式</h3>
         <div class="bg-gray-50 p-4 rounded-md text-center">
           <img
-            src="/images/wechat-qr.svg"
+            src="/images/pay.jpg"
             alt="微信支付二维码"
             class="mx-auto w-48 h-48 mb-4"
           >
           <p class="text-gray-600">请使用微信扫码支付</p>
+          <p class="text-sm text-gray-500 mt-2">扫码后请备注您的邮箱地址</p>
         </div>
       </div>
 
